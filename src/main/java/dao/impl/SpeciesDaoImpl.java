@@ -11,9 +11,13 @@ import java.util.List;
 
 @Repository
 public class SpeciesDaoImpl implements SpeciesDao{
-    Logger logger = LoggerFactory.getLogger(SpeciesDaoImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(SpeciesDaoImpl.class);
 
     private SessionFactory sessionFactory;
+
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
 
     public void addSpecies(Species species) {
         Session session = sessionFactory.getCurrentSession();
