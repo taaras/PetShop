@@ -1,6 +1,6 @@
-package dao;
+package app.dao;
 
-import model.Species;
+import app.model.Species;
 import java.util.List;
 
 /**

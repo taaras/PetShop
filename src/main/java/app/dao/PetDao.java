@@ -1,6 +1,6 @@
-package dao;
+package app.dao;
 
-import model.Pet;
+import app.model.Pet;
 
 import java.util.List;
 

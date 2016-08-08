@@ -1,7 +1,7 @@
-package dao.impl;
+package app.dao.impl;
 
-import dao.SpeciesDao;
-import model.Species;
+import app.dao.SpeciesDao;
+import app.model.Species;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;

@@ -1,4 +1,4 @@
-package model;
+package app.model;
 
 import javax.persistence.*;
 
@@ -26,6 +26,9 @@ public class Pet {
 
     @Column(name = "additional")
     private String additional;
+
+    public Pet() {
+    }
 
     public Pet(Species species, int ageInMonth, Gender gender, int price, String additional) {
         this.species = species;

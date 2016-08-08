@@ -1,4 +1,4 @@
-package model;
+package app.model;
 
 import javax.persistence.*;
 import java.util.*;
@@ -26,6 +26,9 @@ public class Species {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "species")
     private Set<Pet> pets;
+
+    public Species() {
+    }
 
     public Species(String latinTitle, int maleAverageAge, int femaleAverageAge, Nutrition nutrition) {
         this.latinTitle = latinTitle;

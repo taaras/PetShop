@@ -1,7 +1,7 @@
-package dao.impl;
+package app.dao.impl;
 
-import dao.PetDao;
-import model.Pet;
+import app.dao.PetDao;
+import app.model.Pet;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
