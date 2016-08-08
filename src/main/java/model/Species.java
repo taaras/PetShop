@@ -1,6 +1,7 @@
 package model;
 
 import javax.persistence.*;
+import java.util.*;
 
 @Entity
 @Table(name = "species")
@@ -22,6 +23,9 @@ public class Species {
     @Column(name = "nutrition")
     @Enumerated(EnumType.STRING)
     private Nutrition nutrition;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "species")
+    private Set<Pet> pets;
 
     public Species(String latinTitle, int maleAverageAge, int femaleAverageAge, Nutrition nutrition) {
         this.latinTitle = latinTitle;
@@ -79,5 +83,13 @@ public class Species {
 
     public void setNutrition(Nutrition nutrition) {
         this.nutrition = nutrition;
+    }
+
+    public Set<Pet> getPets() {
+        return pets;
+    }
+
+    public void setPets(Set<Pet> pets) {
+        this.pets = pets;
     }
 }
