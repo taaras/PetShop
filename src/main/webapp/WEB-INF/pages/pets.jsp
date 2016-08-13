@@ -64,6 +64,7 @@
                 <th width="75">Price</th>
                 <th width="50">Edit</th>
                 <th width="50">Delete</th>
+                <th width="50">Info</th>
             </tr>
             <c:forEach items="${listPets}" var="pet">
                 <tr>
@@ -72,8 +73,9 @@
                     <td>${pet.ageInMonth}</td>
                     <td>${pet.gender}</td>
                     <td>${pet.price/100}${pet.price%100}</td>
-                    <td><a href="<c:url value='pets/edit/${pet.id}'/>">Edit</a></td>
-                    <td><a href="<c:url value='pets/remove/${pet.id}'/>">Delete</a></td>
+                    <td><a href="<c:url value="pets/edit/${pet.id}"/>">Edit</a></td>
+                    <td><a href="<c:url value="pets/remove/${pet.id}"/>">Delete</a></td>
+                    <td><a href="<c:url value="/petdata/${pet.id}"/>" target="_blank">Info</a></td>
                 </tr>
             </c:forEach>
         </table>

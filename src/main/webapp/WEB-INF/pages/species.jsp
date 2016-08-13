@@ -69,7 +69,7 @@
         <c:forEach items="${listSpecies}" var="species">
             <tr>
                 <td>${species.id}</td>
-                <td>${species.latinTitle}</td>
+                <td><a href="/speciesdata/${species.id}" target="_blank">${species.latinTitle}</a></td>
                 <td>${species.maleAverageAge}</td>
                 <td>${species.femaleAverageAge}</td>
                 <td>${species.nutrition}</td>
