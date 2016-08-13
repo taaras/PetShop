@@ -1,6 +1,6 @@
 package app.controller;
 
-import app.model.Pet;
+import app.model.Nutrition;
 import app.model.Species;
 import app.service.SpeciesService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.util.*;
 
 @Controller
 public class SpeciesController {
@@ -25,7 +27,13 @@ public class SpeciesController {
 
     @RequestMapping(value = "species", method = RequestMethod.GET)
     public String listSpecies(Model model){
-        model.addAttribute("species", new Pet());
+        Map<Nutrition, String> nutritionMap = new LinkedHashMap<Nutrition, String>();
+        for(Nutrition nutrition : Nutrition.values()){
+            nutritionMap.put(nutrition, nutrition.name());
+        }
+        model.addAttribute("nutritionMap", nutritionMap);
+
+        model.addAttribute("species", new Species());
         model.addAttribute("listSpecies", speciesService.listSpecies());
 
         return "species";
@@ -51,6 +59,12 @@ public class SpeciesController {
 
     @RequestMapping(value = "/species/edit/{id}")
     public String editSpecies(@PathVariable("id")int id, Model model){
+        Map<Nutrition, String> nutritionMap = new LinkedHashMap<Nutrition, String>();
+        for(Nutrition nutrition : Nutrition.values()){
+            nutritionMap.put(nutrition, nutrition.name());
+        }
+        model.addAttribute("nutritionMap", nutritionMap);
+
         model.addAttribute("species", speciesService.getSpeciesById(id));
         model.addAttribute("listSpecies", speciesService.listSpecies());
 

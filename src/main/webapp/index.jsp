@@ -1,16 +1,14 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Тарас
-  Date: 08.08.2016
-  Time: 13:31
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>PetShop</title>
   </head>
   <body>
-  $END$
+  <h3>Welcome to the pet shop network</h3>
+  <br/>
+  <a href="<c:url value="/pets"/>">Pets list</a>
+  <br/>
+  <a href="<c:url value="/species"/>">Species list</a>
   </body>
 </html>
